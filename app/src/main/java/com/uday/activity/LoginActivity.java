@@ -116,6 +116,8 @@ public class LoginActivity extends AppCompatActivity   implements InternetConnec
 
     public void onLoginSuccess() {
         _loginButton.setEnabled(true);
+        Intent mIntent=new Intent(LoginActivity.this, VerticalHorizontalListingActivity.class);
+        startActivity(mIntent);
         finish();
     }
 

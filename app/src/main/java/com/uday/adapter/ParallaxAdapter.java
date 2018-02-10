@@ -25,15 +25,10 @@ public class ParallaxAdapter extends
                                 ArrayList<String> arrayList) {
         this.context = context;
         this.arrayList = arrayList;
-
     }
 
     public class DemoViewHolder  extends RecyclerView.ViewHolder {
-
-
         public TextView title;
-
-
         public DemoViewHolder(View view) {
             super(view);
             this.title = (TextView) view.findViewById(R.id.cardTitle);
@@ -44,18 +39,14 @@ public class ParallaxAdapter extends
     @Override
     public int getItemCount() {
         return (null != arrayList ? arrayList.size() : 0);
-
     }
 
     @Override
     public void onBindViewHolder(DemoViewHolder holder,
                                  int position) {
-
-
         final DemoViewHolder mainHolder = (DemoViewHolder) holder;
         //Setting text over textview
         mainHolder.title.setText(arrayList.get(position));
-
     }
 
     @Override
@@ -71,11 +62,6 @@ public class ParallaxAdapter extends
                 return super.toString();
             }
         };
-
-
         return mainHolder;
-
     }
-
-
 }

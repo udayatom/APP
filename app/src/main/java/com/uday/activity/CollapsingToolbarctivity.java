@@ -9,13 +9,14 @@ import android.support.v7.graphics.Palette;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 
 import com.uday.R;
 import com.uday.adapter.ParallaxAdapter;
 
 import java.util.ArrayList;
 
-public class CollapsingToolbarctivity extends AppCompatActivity {
+public class CollapsingToolbarctivity extends AppCompatActivity implements View.OnClickListener{
     private static RecyclerView recyclerView;
     private static Toolbar toolbar;
     private static CollapsingToolbarLayout collapsingToolbarLayout;
@@ -27,12 +28,17 @@ public class CollapsingToolbarctivity extends AppCompatActivity {
         setContentView(R.layout.activity_collapsing_toolbarctivity);
 
         toolbar = (Toolbar)findViewById(R.id.toolBar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        if (toolbar != null) {
+            setSupportActionBar(toolbar);
+            getSupportActionBar().setTitle("Product Details");
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+            getSupportActionBar().setHomeButtonEnabled(true);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
 
         collapsingToolbarLayout = (CollapsingToolbarLayout)findViewById(R.id.collapsing_toolbar);
-        collapsingToolbarLayout.setTitle("Toolbar Animation Demo");//Set Title over collapsing toolbar layout
-
+        collapsingToolbarLayout.setTitle("");//Set Title over collapsing toolbar layout
 
         Bitmap bitmap = BitmapFactory.decodeResource(getResources(),
                 R.drawable.background);
@@ -53,7 +59,6 @@ public class CollapsingToolbarctivity extends AppCompatActivity {
 
     //Setting recycler view
     private void setRecyclerView() {
-
         recyclerView = (RecyclerView)
                 findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
@@ -66,8 +71,16 @@ public class CollapsingToolbarctivity extends AppCompatActivity {
             arrayList.add("Card Item " + i);//Adding items to recycler view
         }
         ParallaxAdapter adapter = new ParallaxAdapter(CollapsingToolbarctivity.this, arrayList);
-        recyclerView.setAdapter(adapter);// set adapter on recyclerview
-
+        recyclerView.setAdapter(adapter);// set adapter on recyclerview1
+    }
+    @Override
+    public void onClick(View view) {
+        switch (view.getId())
+        {
+            case android.R.id.home:
+                finish();
+                break;
+        }
     }
 }
 

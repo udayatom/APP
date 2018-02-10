@@ -20,4 +20,7 @@
   <color name="windowBackground">#FFFFFF</color>
   <color name="navigationBarColor">#000000</color>
 
+  <color name="teal_100">#b2dfdb</color> <!-- Use with black text -->
+  <color name="teal_500">#009688</color> <!-- Use with white text -->
+
 </resources>

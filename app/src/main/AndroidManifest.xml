@@ -27,7 +27,6 @@
             android:windowSoftInputMode="stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -39,7 +38,6 @@
         <receiver
             android:name=".receviers.InternetConnector_Receiver"
             android:enabled="true">
-
             <!-- Intent filters for broadcast receiver -->
             <intent-filter>
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
@@ -47,7 +45,12 @@
         </receiver>
 
         <activity android:name="com.uday.activity.CollapsingToolbarctivity"
-            android:theme="@style/AppTheme.Dark"></activity>
+            android:theme="@style/AppTheme.Dark">
+        </activity>
+        <activity android:name="com.uday.activity.VerticalHorizontalListingActivity"
+            android:theme="@style/AppTheme.Dark">
+        </activity>
+
     </application>
 
 </manifest>

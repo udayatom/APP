@@ -12,7 +12,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.uday.R;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
