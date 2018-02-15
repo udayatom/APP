@@ -49,7 +49,7 @@ public class CollapsingToolbarctivity extends AppCompatActivity implements View.
             @Override
             public void onGenerated(Palette palette) {
 
-                mutedColor = palette.getMutedColor(R.color.primary);
+                mutedColor = palette.getMutedColor(R.color.colorPrimary);
                 collapsingToolbarLayout.setContentScrimColor(mutedColor);
                 collapsingToolbarLayout.setStatusBarScrimColor(R.color.black_trans);
             }
